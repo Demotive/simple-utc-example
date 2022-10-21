@@ -3,12 +3,7 @@ var router = express.Router()
 
 router.get('/', function (req, res) {
   req.session.destroy();
-  res.render('index.html');
-});
-
-router.get('/index-gpoc', function (req, res) {
-  req.session.destroy();
-  res.render('index-gpoc.html');
+  res.render('example-utc.html');
 });
 
 module.exports = router
