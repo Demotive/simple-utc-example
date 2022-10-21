@@ -1,0 +1,291 @@
+@import "tools/contain-floats";
+@import "tools/media-queries";
+@import "tools/tints";
+@import "tools/mixins/addons";
+@import "tools/mixins/button";
+@import "tools/hidden";
+
+@import "variables/colours";
+@import "variables/frutiger";
+
+//Typography
+@import "modules/typography/base";
+@import "modules/typography/headings";
+@import "modules/typography/paragraphs";
+@import "modules/typography/lists";
+@import "modules/typography/formatting";
+@import "modules/typography/links";
+
+// Layout and grid
+@import "modules/layout/layout";
+@import "modules/layout/grid";
+@import "modules/layout/spacing";
+
+// Modules
+@import "modules/banner/prototype";
+@import "modules/banner/service-banners";
+@import "modules/banner/survey-banner";
+@import "modules/callout/callout";
+@import "modules/cards/service-card";
+@import "modules/controls/action-link";
+@import "modules/controls/breadcrumbs";
+@import "modules/controls/buttons";
+@import "modules/data/check-details";
+@import "modules/data/opening-times";
+@import "modules/data/table";
+@import "modules/disclosure/details";
+@import "modules/disclosure/collapse";
+@import "modules/dispositions/care-advice";
+@import "modules/dispositions/disposition-unit";
+@import "modules/feedback/feedback";
+@import "modules/forms/date";
+@import "modules/forms/postcode";
+@import "modules/forms/errors";
+@import "modules/forms/fieldset";
+@import "modules/forms/form";
+@import "modules/forms/input";
+@import "modules/forms/input-hinted";
+@import "modules/forms/label";
+@import "modules/forms/radio-checkbox";
+@import "modules/forms/search";
+@import "modules/forms/textarea";
+@import "modules/gp-details/gp-details";
+@import "modules/gp-lookup/gp-lookup";
+@import "modules/highlight-flag/highlight-flag";
+@import "modules/image/image";
+@import "modules/interrupt/interrupt";
+@import "modules/listing/address-listing";
+@import "modules/loader/loader";
+@import "modules/location/location";
+@import "modules/media/media";
+@import "modules/modal/modal";
+@import "modules/navigation/a-z";
+@import "modules/nhsid/nhsid";
+@import "modules/overlay/overlay";
+@import "modules/search/categories";
+@import "modules/search/results";
+@import "modules/signage/info";
+@import "modules/service-booking/service-booking";
+@import "modules/services/service-primary";
+@import "modules/services/service-listings";
+@import "modules/survey/survey";
+
+/**
+  The [class^="nhsuk-"] selector is used so that for the new NHS.UK Frontend styles
+  we can bring them in on a component by component basis. Some pages will also use it
+  such as .nhsuk-core to namespace the entire page. Our components that use the NHS.UK styles
+  are imported here so they have access to the correct mixins.
+*/
+
+// simple flex utility
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+[class^="nhsuk-"] {
+  /* nhsuk-frontend components */
+  @import "node_modules/nhsuk-frontend/packages/core/all";
+  /* nhsuk-frontend components */
+  @import "node_modules/nhsuk-frontend/packages/components/action-link/action-link";
+  @import "node_modules/nhsuk-frontend/packages/components/back-link/back-link";
+  @import "node_modules/nhsuk-frontend/packages/components/breadcrumb/breadcrumb";
+  @import "node_modules/nhsuk-frontend/packages/components/button/button";
+  @import 'node_modules/nhsuk-frontend/packages/components/checkboxes/checkboxes';
+  @import "node_modules/nhsuk-frontend/packages/components/emergency-alert/emergency-alert";
+  @import "node_modules/nhsuk-frontend/packages/components/footer/_footer";
+  @import "node_modules/nhsuk-frontend/packages/components/header/_header";
+  @import "node_modules/nhsuk-frontend/packages/components/images/images";
+
+  // ===========================================================================
+  // NHS.UK header and footer overrides from shame.scss:
+  // https://dev.azure.com/NHS111Online/111Online/_git/nhs111-web.git?path=%2FNHS111%2FNHS111.Web.Frontend%2Fsrc%2Fstyles%2F_nhsuk-frontend-shame.scss
+
+  // NHS.UK header
+  .nhsuk-header__logo {
+    max-width: none;
+    .nhsuk-logo__background {
+      fill: #fff;
+    }
+    .nhsuk-logo__text {
+      fill: #005eb8; /* $color_nhsuk-blue */
+    }
+    .util-digits { // squish the 1 1 1
+      letter-spacing: -.14em;
+      padding-right: .14em;
+    }
+  }
+  .nhsuk-header__link--service {
+    align-items: center;
+    display: flex;
+  }
+  .nhsuk-header__service-name {
+    padding-left: nhsuk-spacing(3);
+    font-size: 19px;
+    font-size: nhsuk-px-to-rem(19);
+  }
+
+  // NHS.UK footer
+  .nhsuk-footer {
+    .nhsuk-section-break--visible {
+      border-bottom-color: #768692;
+    }
+    a,
+    a:visited {
+      color: #4c6272;
+    }
+    p {
+      color: #4c6272;
+    }
+    .nhsuk-footer__list-item {
+      float: none;
+    }
+  }
+
+  /* MAT'S ANNOYING OVERRIDES */
+  .button {
+    @extend .nhsuk-button;
+    border-radius: 0;
+    width: 100%;
+    @include media(mid) {
+      width: auto;
+    }
+  }
+
+  .nhsuk-global-alert {
+    @include nhsuk-responsive-margin(8, 'bottom')
+  }
+
+  .shunt {
+    @include nhsuk-responsive-margin(4, 'top')
+  }
+  .shunt-2 {
+    @include nhsuk-responsive-margin(6, 'top')
+  }
+  .shunt-3 {
+    @include nhsuk-responsive-margin(8, 'top')
+  }
+
+  .footer-container {
+    a {
+      @include nhsuk-link-style-inverted;
+      color: $white;
+    }
+  }
+
+  .small {
+    font-size: 14px;
+    line-height: $baseline-grid-unit*5;
+    @include media(mid) {
+      font-size: 16px;
+      line-height: $baseline-grid-unit*6;
+    }
+  }
+
+  details {
+    & > summary {
+      @include nhsuk-typography-responsive(19);
+    }
+    & > div {
+      padding-top: $baseline-grid-unit*4;
+      @include media(mid) {
+        line-height: $baseline-grid-unit*6;
+      }
+    }
+  }
+
+  .check-details {
+    @include nhsuk-typography-responsive(19);
+  }
+
+  .nhsuk-image {
+    background-color: $grey-5;
+  }
+  .callout .nhsuk-image {
+    background-color: $white;
+  }
+
+  .opening-times {
+    .single,
+    .multi {
+      @include nhsuk-typography-responsive(19);
+    }
+  }
+
+  .error-summary {
+    a {
+      color: $error-colour;
+    }
+  }
+
+  .search {
+    .button {
+      @include button($nhs-blue, $boldweight);
+      box-shadow: none;
+      border: 2px solid $nhs-blue;
+      &:hover,
+      &:focus {
+        border-color: darken($nhs-blue, 5%);
+      }
+    }
+  }
+}
+
+// =============================================================================
+// Overrides to handle NHS.UK background, tweaks to a few components
+// =============================================================================
+body {
+  background-color: #f0f4f5; /* $color_nhsuk-grey-5 */
+}
+.callout--attention {
+  border-color: #005eb8; /* $color_nhsuk-blue */
+}
+.callout--muted {
+  background-color: #fff;
+}
+.callout--info {
+  border-color: #4c6272; /* $color_nhsuk-rey-1 */
+  background-color: #fff;
+}
+.callout--warning {
+  border-color: #ffb81C ; /* $color_nhsuk-arm-yellow */
+  border-width: 4px 0 0 0;
+  background-color: #fff;
+}
+.callout--alert {
+  border-color: #d5281b ; /* $color_nhsuk-ed */
+  background-color: #fff;
+}
+.callout--error {
+  border-color: #d5281b ; /* $color_nhsuk-ed */
+  background-color: #fff;
+}
+.signage.info {
+  border-color: #005eb8; /* $color_nhsuk-lue */
+  background-color: #fff; /* I'm not sure this exact thing is used tbh */
+}
+.content-seperator,
+.content-seperator--dark-blue {
+  background-color: #aeb7bd; /* $color_nhsuk-rey-3 */
+}
+.service-details,
+.service-listing {
+  border-color: #aeb7bd; /* $color_nhsuk-rey-3 */
+  background-color: #fff;
+}
+.service-details-container .map-frame {
+  border-top: 4px solid white !important;
+  border-right: 4px solid white !important;
+  border-bottom: 4px solid white !important;
+  border-left: 4px solid white !important;
+}
+.map-frame {
+  height: 100% !important;
+}
+.address-listing .address {
+  background-color: #fff;
+}
+.summary-list dt,
+.summary-list dd {
+  border-bottom-color: #aeb7bd; /* $color_nhsuk-grey-3 */
+}

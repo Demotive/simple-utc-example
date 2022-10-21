@@ -1,0 +1,123 @@
+{% set suppress_feedback = true %}
+
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}Where to get help - NHS 111{% endblock %}
+
+{% block body_css_classes %}nhsuk-frontend{% endblock %}
+
+{% block content %}
+
+<div class="content-block measure">
+  <h1>Where to get help</h1>
+  <div class="callout callout--warning">
+    <p>Get help as soon as you can </p>
+  </div>
+</div>
+
+<div class="service-details-container">
+  <div class="details-1 service-details">
+    <div class="unit address">
+      <p>
+        <b>Urgent treatment centre</b><br>
+        Newtown hospital<br>
+        Avenue Road<br>
+        Newtown<br>
+        AB1 2CD
+      </p>
+    </div>
+    <div class="unit">
+      <div class="opening-times">
+        <div class="single">
+          Open today:<br>
+          8:00am until 8:00pm
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="geo map-frame">
+    <iframe
+      width="100%"
+      height="100%"
+      frameborder="0" style="border:0"
+      loading="lazy"
+      allowfullscreen=""
+      aria-hidden="false"
+      tabindex="0"
+      referrerpolicy="no-referrer-when-downgrade"
+      src="https://www.google.com/maps/embed/v1/view?key=AIzaSyDP454skpvnlft08MDIcZG_khm-sBHmFbM&center=51.051306,-0.352559&zoom=16">
+    </iframe>
+    <!--
+    pb=!1m18!1m12!1m3!1d9718.158976286779!2d-1.9412695557458626!3d52.487468669492515!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4870bce188d998bd%3A0x9e6eee3678148c92!2sBirmingham%20City%20Hospital!5e0!3m2!1sen!2suk!4v1596112618807!5m2!1sen!2suk
+    -->
+  </div>
+  <div class="details-2 service-details">
+    <div class="unit">
+      0.0 miles away<br>
+      <a href="javascript: return false;">
+        Get directions <span class="nhsuk-u-font-size-16">(opens a new tab or window)</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="content-block measure">
+  <p>
+    Urgent treatment centres are overseen by GPs. They’re open for at least 12 hours every day. They can diagnose and deal with many of the most common problems people go to A&E for.
+  </p>
+  <details>
+    <summary><span>Why is this the recommended service?</span></summary>
+    <div>
+      <p>
+        We show you services that can help with your symptoms.
+      </p>
+      <p>
+        The places shown are open within the timeframe you need to get help. These services will either have space to see you, or can speak to you on the phone.
+      </p>
+    </div>
+  </details>
+
+  <div class="content-seperator content-seperator--equalvertspacing--large"></div>
+
+  <h2>Other services that can help</h2>
+  <p>
+    If you do not want to use the recommended service, <a href="javascript: return false;">see other things you can do.</a>
+  </p>
+
+  <div class="content-seperator content-seperator--equalvertspacing--large"></div>
+  <details>
+    <summary><span>Things to look out for and self-care</span></summary>
+    <div>
+      <p>
+        We show you services that can help with your symptoms.
+      </p>
+    </div>
+  </details>
+  <details>
+    <summary><span>What to do if you start to feel worse</span></summary>
+    <div>
+      <ol>
+        <li>Call 111</li>
+        <li>Tell them 111 online said you needed to get help within 4 hours.</li>
+        <li>Tell them your symptoms have got worse and you need to speak to a nurse.</li>
+      </ol>
+      <p>
+        You might have to start the questions again, or answer new questions about any new symptoms.
+      </p>
+      <details>
+        <summary><span>If you are deaf or hard of hearing</span></summary>
+        <div>
+          <p>
+            There are <a href="javascript: return false;">other ways you can contact 111</a> if you start to feel worse.
+          </p>
+        </div>
+      </details>
+    </div>
+  </details>
+</div>
+
+{% endblock %}
+
+{% block body_after %}
+
+{% endblock %}
